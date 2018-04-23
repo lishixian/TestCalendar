@@ -31,7 +31,7 @@ public class WeekBar extends LinearLayout {
 
     public WeekBar(Context context) {
         super(context);
-        if ("com.haibin.calendarview.WeekBar".equals(getClass().getName())) {
+        if ("com.tea.calendarview.WeekBar".equals(getClass().getName())) {
             LayoutInflater.from(context).inflate(R.layout.cv_week_bar, this, true);
         }
     }
@@ -43,7 +43,7 @@ public class WeekBar extends LinearLayout {
      */
     void setup(CustomCalendarViewDelegate delegate) {
         this.mDelegate = delegate;
-        if ("com.haibin.calendarview.WeekBar".equalsIgnoreCase(getClass().getName())) {
+        if ("com.tea.calendarview.WeekBar".equalsIgnoreCase(getClass().getName())) {
             setTextColor(delegate.getWeekTextColor());
             setBackgroundColor(delegate.getWeekBackground());
         }
