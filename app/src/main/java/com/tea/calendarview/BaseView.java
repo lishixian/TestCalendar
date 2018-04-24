@@ -156,10 +156,10 @@ public abstract class BaseView extends View implements View.OnClickListener, Vie
      * @param context context
      */
     private void initPaint(Context context) {
-        mCurMonthTextPaint.setAntiAlias(true);
-        mCurMonthTextPaint.setTextAlign(Paint.Align.CENTER);
+        mCurMonthTextPaint.setAntiAlias(true);// 设置抗锯齿
+        mCurMonthTextPaint.setTextAlign(Paint.Align.CENTER);// 文本对齐方式
         mCurMonthTextPaint.setColor(0xFF111111);
-        mCurMonthTextPaint.setFakeBoldText(true);
+        mCurMonthTextPaint.setFakeBoldText(true);// 设置中文仿“粗体”
         mCurMonthTextPaint.setTextSize(Util.dipToPx(context, TEXT_SIZE));
 
         mOtherMonthTextPaint.setAntiAlias(true);
