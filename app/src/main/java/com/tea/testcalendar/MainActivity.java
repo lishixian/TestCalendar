@@ -1,5 +1,6 @@
 package com.tea.testcalendar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
                         switchFrament(lastShowFragment, 1);
                         lastShowFragment = 1;
                     }
+                    Intent intent = new Intent(MainActivity.this, BasicActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_notifications:
                     if (lastShowFragment != 2) {

@@ -127,6 +127,20 @@
             app:year_view_month_text_size="20sp"
             app:year_view_scheme_color="#f17706" />
 
+        <com.tea.testcalendar.group.GroupRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/content_background"
+            app:group_background="@color/content_background"
+            app:group_center="false"
+            app:group_has_header="false"
+            app:group_height="42dp"
+            app:group_padding_left="16dp"
+            app:group_padding_right="16dp"
+            app:group_text_color="#555555"
+            app:group_text_size="14sp" />
+
     </com.tea.calendarview.CalendarLayout>
 
 </LinearLayout>

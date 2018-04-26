@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import com.tea.calendarview.Calendar;
 import com.tea.calendarview.CalendarLayout;
 import com.tea.calendarview.CalendarView;
+import com.tea.testcalendar.group.GroupItemDecoration;
+import com.tea.testcalendar.group.GroupRecyclerView;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -39,6 +42,7 @@ public class CalendarFragment extends Fragment implements
     RelativeLayout mRelativeTool;
     private int mYear;
     CalendarLayout mCalendarLayout;
+    GroupRecyclerView mRecyclerView;
 
 
     private static boolean isMiUi = false;
@@ -62,13 +66,13 @@ public class CalendarFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.calendar_fragment, null);
         initView(view);
+        initData(view);
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        initData();
     }
 
     protected void initView(View view) {
@@ -108,7 +112,7 @@ public class CalendarFragment extends Fragment implements
         mTextCurrentDay.setText(String.valueOf(mCalendarView.getCurDay()));
     }
 
-    protected void initData() {
+    protected void initData(View view) {
         List<Calendar> schemes = new ArrayList<>();
         int year = mCalendarView.getCurYear();
         int month = mCalendarView.getCurMonth();
@@ -123,6 +127,12 @@ public class CalendarFragment extends Fragment implements
         schemes.add(getSchemeCalendar(year, month, 25, 0xFF13acf0, "假"));
         schemes.add(getSchemeCalendar(year, month, 27, 0xFF13acf0, "多"));
         mCalendarView.setSchemeDate(schemes);
+
+        mRecyclerView = (GroupRecyclerView) view.findViewById(R.id.recyclerView);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.addItemDecoration(new GroupItemDecoration<String, Article>());
+        mRecyclerView.setAdapter(new ArticleAdapter(getContext()));
+        mRecyclerView.notifyDataSetChanged();
 
     }
 
