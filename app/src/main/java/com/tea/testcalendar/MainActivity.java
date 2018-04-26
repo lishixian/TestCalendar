@@ -10,9 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 
-
-
-
 public class MainActivity extends AppCompatActivity {
 
     private Fragment[] fragments;
