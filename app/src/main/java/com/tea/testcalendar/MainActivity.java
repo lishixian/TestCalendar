@@ -14,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
     private Fragment[] fragments;
     private int lastShowFragment = 0;
 
-
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
