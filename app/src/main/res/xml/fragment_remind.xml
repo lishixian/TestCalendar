@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceScreen android:layout="@layout/remind_image">
+
+    </PreferenceScreen>
+
+
+    <PreferenceCategory>
+        <PreferenceScreen android:title="001">
+
+        </PreferenceScreen>
+
+        <PreferenceScreen android:title="002">
+
+        </PreferenceScreen>
+
+        <PreferenceScreen android:title="003">
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

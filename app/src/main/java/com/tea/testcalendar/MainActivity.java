@@ -1,11 +1,11 @@
 package com.tea.testcalendar;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
@@ -67,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
     private void initFragments(){
         Fragment homeFragment = new CalendarFragment();
         Fragment dashboardFragment = new Fragment();
-        Fragment notificationFragment = new Fragment();
+        Fragment notificationFragment = new RemindFragment();
 
         fragments = new Fragment[]{homeFragment, dashboardFragment, notificationFragment};
         lastShowFragment = 0;
-        getSupportFragmentManager()
+        getFragmentManager()
                 .beginTransaction()
                 .add(R.id.content, homeFragment)
                 .show(homeFragment)
@@ -82,12 +82,12 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 切换Fragment
      *
-     * @param lastIndex 上个显示Fragment的索引
+     * @param lastIndex 上个显示Fragment的索引ßß
      * @param index     需要显示的Fragment的索引
      */
     public void switchFrament(int lastIndex, int index) {
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.hide(fragments[lastIndex]);
 
         if (!fragments[index].isAdded()) {

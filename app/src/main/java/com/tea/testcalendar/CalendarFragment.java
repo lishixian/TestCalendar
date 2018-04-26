@@ -1,9 +1,9 @@
 package com.tea.testcalendar;
 
 import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -129,9 +129,9 @@ public class CalendarFragment extends Fragment implements
         mCalendarView.setSchemeDate(schemes);
 
         mRecyclerView = (GroupRecyclerView) view.findViewById(R.id.recyclerView);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.addItemDecoration(new GroupItemDecoration<String, Article>());
-        mRecyclerView.setAdapter(new ArticleAdapter(getContext()));
+        mRecyclerView.setAdapter(new ArticleAdapter(getActivity()));
         mRecyclerView.notifyDataSetChanged();
 
     }
