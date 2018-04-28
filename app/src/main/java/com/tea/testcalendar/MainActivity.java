@@ -9,6 +9,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.tea.testcalendar.home.BasicActivity;
+import com.tea.testcalendar.home.CalendarFragment;
+import com.tea.testcalendar.remind.RemindFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     private Fragment[] fragments;
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     private void initFragments(){
         Fragment homeFragment = new CalendarFragment();
         Fragment dashboardFragment = new Fragment();
-        Fragment notificationFragment = new RemindFragment();
+        Fragment notificationFragment = RemindFragment.newInstance();
 
         fragments = new Fragment[]{homeFragment, dashboardFragment, notificationFragment};
         lastShowFragment = 0;

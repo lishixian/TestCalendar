@@ -7,15 +7,22 @@
 
 
     <PreferenceCategory>
-        <PreferenceScreen android:title="001">
+        <!--TODO: 待替换正规图标-->
+        <PreferenceScreen
+            android:icon="@mipmap/ic_launcher"
+            android:key="remind_birthday_anniversary_countdown"
+            android:title="@string/remind_birthday_anniversary_countdown">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.tea.testcalendar"
+                android:targetClass="com.tea.testcalendar.remind.RemindBACActivity"/>
 
         </PreferenceScreen>
 
-        <PreferenceScreen android:title="002">
-
-        </PreferenceScreen>
-
-        <PreferenceScreen android:title="003">
+        <PreferenceScreen
+            android:icon="@mipmap/ic_launcher"
+            android:key="remind_festival"
+            android:title="@string/remind_festival">
 
         </PreferenceScreen>
 

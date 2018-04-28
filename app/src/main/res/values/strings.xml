@@ -130,4 +130,16 @@
     <string name="title_activity_basic">Basic Example</string>
     <string name="title_activity_asynchronous">Asynchronous Events</string>
     <string name="async_error">Could not download events from the internet</string>
+
+    <!-- 提醒主页 字段 -->
+    <string name="remind_ad">广告</string>
+    <string name="remind_agenda">我的日程</string>
+    <string name="remind_backlog">我的待办</string>
+    <string name="remind_birthday_anniversary_countdown">生日-纪念日-倒数日</string>
+    <string name="remind_festival">节日节气</string>
+    <!-- 提醒_生日-纪念日-倒数日 字段  -->
+    <string name="remind_all">全部</string>
+    <string name="remind_birthday">生日</string>
+    <string name="remind_anniversary">纪念日</string>
+    <string name="remind_countdown">倒数日</string>
 </resources>

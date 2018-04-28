@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- 提醒生日主页的主题-->
+    <style name="RemindBACTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
 </resources>
