@@ -30,6 +30,14 @@ git push origin master
 git push origin HEAD:master
 // 或者 git push origin HEAD:refs/for/master
 
+//git reset --hard HEAD 后,丢失找回
+git reflog
+    b7057a9 HEAD@{0}: reset: moving to b7057a9
+    98abc5a HEAD@{1}: commit: more stuff added to foo
+    b7057a9 HEAD@{2}: commit (initial): initial commit
+//如找回第二commit，只需要做如下操作：
+$ git reset --hard 98abc5a
+
 ```
 
 ## git规范提交:
