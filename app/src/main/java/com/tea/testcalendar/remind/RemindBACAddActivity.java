@@ -1,7 +1,6 @@
 package com.tea.testcalendar.remind;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -21,21 +20,22 @@ import butterknife.BindView;
 
 /**
  * Created by lisx on 18-4-27.
+ * <p>
+ * 提醒的"生日-纪念日-倒数日"中的添加页面
  */
-public class RemindBACActivity extends VActivity<RemindBACPresenter> {
 
-    private static final String TAG = RemindBACActivity.class.getSimpleName();
+public class RemindBACAddActivity extends VActivity<RemindBACAddPresenter> {
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
-    @BindView(R.id.remind_bac_tab_layout)
+    @BindView(R.id.remind_bac_add_tab_layout)
     TabLayout mTableLayout;
 
-    @BindView(R.id.remind_bac_tab_view_pager)
+    @BindView(R.id.remind_bac_add_view_pager)
     ViewPager mViewPager;
+
     private List<RemindType> mRemindTabs = new ArrayList<RemindType>() {{
-        add(RemindType.ALL);
         add(RemindType.BIRTHDAY);
         add(RemindType.ANNIVERSARY);
         add(RemindType.COUNTDOWN);
@@ -43,7 +43,7 @@ public class RemindBACActivity extends VActivity<RemindBACPresenter> {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_remind_bac;
+        return R.layout.activity_remind_bac_add;
     }
 
     @Override
@@ -71,7 +71,7 @@ public class RemindBACActivity extends VActivity<RemindBACPresenter> {
         List<String> tabs = new ArrayList<>();
         for (RemindType type : mRemindTabs) {
             tabs.add(type.toString(this));
-            fragmentArrays.add(RemindTabFragment.newInstance(type, this));
+            fragmentArrays.add(RemindAddTabFragment.newInstance(type, this));
         }
 
         mViewPager.setAdapter(new RemindTabFragmentAdapter(getFragmentManager(), fragmentArrays, tabs));
@@ -105,13 +105,13 @@ public class RemindBACActivity extends VActivity<RemindBACPresenter> {
     @Override
     public void onResume() {
         super.onResume();
-        mToolbar.setTitle(getResources().getString(R.string.remind_all));
+        mToolbar.setTitle(getResources().getString(R.string.remind_birthday));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.clear();
-        getMenuInflater().inflate(R.menu.remind_toolbar, menu);
+        getMenuInflater().inflate(R.menu.remind_add_toolbar, menu);
         return true;
     }
 
@@ -120,8 +120,7 @@ public class RemindBACActivity extends VActivity<RemindBACPresenter> {
         switch (item.getItemId()) {
             case R.id.remind_search:
                 return true;
-            case R.id.remind_add:
-                startActivity(new Intent(this, RemindBACAddActivity.class));
+            case R.id.remind_add_confirm:
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -129,7 +128,7 @@ public class RemindBACActivity extends VActivity<RemindBACPresenter> {
     }
 
     @Override
-    public RemindBACPresenter newP() {
-        return new RemindBACPresenter();
+    public RemindBACAddPresenter newP() {
+        return new RemindBACAddPresenter();
     }
 }

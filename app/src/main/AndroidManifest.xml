@@ -24,10 +24,23 @@
             android:label="@string/title_activity_basic" >
         </activity>
 
+
         <!-- remind -->
         <activity
             android:name=".remind.RemindBACActivity"
-            android:theme="@style/RemindBACTheme"></activity>
+            android:theme="@style/RemindBACTheme"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|mcc|mnc|keyboard|keyboardHidden|navigation|uiMode|fontScale">
+
+        </activity>
+
+        <activity
+            android:name=".remind.RemindBACAddActivity"
+            android:theme="@style/RemindBACTheme"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|mcc|mnc|keyboard|keyboardHidden|navigation|uiMode|fontScale">
+
+        </activity>
     </application>
 
 </manifest>

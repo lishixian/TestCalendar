@@ -5,6 +5,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="content_text_view_text">Hello</string>
 
+    <string name="homepage">首页</string>
+
     <string name="cv_app_name">CalendarView</string>
     <string-array name="lunar_first_of_month">
         <item>春节</item>
