@@ -9,7 +9,24 @@ public class JavaTestClass {
     public static void main(String[] args) {
 
         //System.out.println("你好，Java");
-        testMap();
+        //testMap();
+        testEnum();
+    }
+
+    /**
+     * 测试enum类的输出类型
+     */
+    private static void testEnum(){
+        RemindType rt = RemindType.ALL;
+
+        System.out.println("rt:" + rt);
+        System.out.println("rt.getType:" + rt.getType());
+        System.out.println("rt.equals(0):" + rt.equals(0));
+        System.out.println("rt.getType(0):" + rt.getType(0));
+/*      rt:ALL
+        rt.getType:0
+        rt.equals(0):false
+        rt.getType(0):ALL*/
 
     }
 
@@ -45,4 +62,48 @@ public class JavaTestClass {
         }
     }
 
+    /**
+     * Created by lisx on 18-4-27.
+     * <p>
+     * 提醒的类型
+     */
+    public static enum RemindType {
+        UNKNOW(-1),
+        ALL(0),
+        BIRTHDAY(1),
+        ANNIVERSARY(2),
+        COUNTDOWN(3);
+        private int type;
+
+        RemindType(int type) {
+            this.type = type;
+        }
+
+        public void setType(int type) {
+            this.type = type;
+        }
+
+        public int getType() {
+            return type;
+        }
+
+        public static RemindType getType(int num) {
+            RemindType type = UNKNOW;
+            switch (num) {
+                case 0:
+                    type = ALL;
+                    break;
+                case 1:
+                    type = BIRTHDAY;
+                    break;
+                case 2:
+                    type = ANNIVERSARY;
+                    break;
+                case 3:
+                    type = COUNTDOWN;
+                    break;
+            }
+            return type;
+        }
+    }
 }
